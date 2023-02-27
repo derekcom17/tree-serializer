@@ -1,0 +1,24 @@
+# List of all Verilog source files to include in this build.
+# Used by both synthesis and RTL simulation.
+synthesis.inputs.input_files: [
+  "${bsg_root}/bsg_misc/bsg_defines.v",
+  "${bsg_root}/bsg_misc/bsg_dff.v",
+  "${bsg_root}/bsg_misc/bsg_dff_reset.v",
+  "${bsg_root}/bsg_misc/bsg_mux.v",
+  "${bsg_root}/bsg_misc/bsg_counter_clock_downsample.v",
+  "${bsg_root}/bsg_misc/bsg_strobe.v",
+  "${bsg_root}/bsg_misc/bsg_xnor.v",
+  "${bsg_root}/bsg_misc/bsg_muxi2_gatestack.v",
+  "${bsg_root}/bsg_misc/bsg_nand.v",
+  "${bsg_root}/bsg_misc/bsg_nor3.v",
+  "${bsg_root}/bsg_misc/bsg_reduce.v",
+  "${bsg_root}/bsg_misc/bsg_buf.v",
+  
+  "v/mp_serializer.v",
+]
+synthesis.inputs.input_files_meta: [append, subst]
+
+# Add synthesis input files to simulation inputs
+# (Only for RTL sim)
+sim.inputs.input_files: synthesis.inputs.input_files
+sim.inputs.input_files_meta: [crossref, subst]

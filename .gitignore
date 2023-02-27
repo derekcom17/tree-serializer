@@ -1,0 +1,11 @@
+build/
+DVEfiles/
+output.json
+*.vpd
+*.vcd
+hammer.log
+sdfAnnotateInfo
+ucli.key
+novas.conf
+novas.rc
+verdiLog
