@@ -15,6 +15,7 @@ synthesis.inputs.input_files: [
   "${bsg_root}/bsg_misc/bsg_buf.v",
   
   "v/mp_serializer.v",
+  "v/mp_serializer_top.v",
 ]
 synthesis.inputs.input_files_meta: [append, subst]
 
