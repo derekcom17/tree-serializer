@@ -6,4 +6,4 @@
 #
 
 # TODO: add constraints here!
-create_clock -name core_clk -period 10 [get_ports CLK]
+create_clock -name core_clk -period 2.0 [get_ports CLK]
