@@ -1,12 +1,12 @@
 # constraints.tcl
 # 
 
-# Constraints for serial clock
+# Constraints for serial clock (Remember this is DDR so the data is twice as fast!)
 set_units -time ns
-create_clock [get_ports clk_i]  -name serial_clock  -period 2.0
+create_clock [get_ports clk_i]  -name serial_clock  -period 4.0
 
-TODO: does this work?
-set_disable_timing -from reset_i [get_db hinsts]
+# Give a lot more time for the async reset signal
+set_false_path -from [get_ports reset_i]
 
 # Depth of the tree
 set DEPTH 8
@@ -21,8 +21,6 @@ for {set d 0} {$d < $DEPTH} {incr d} {
     create_generated_clock -name "gen_clk_d$d\_i$i"  -source [get_pins [get_db $mux_inst .name]/clk_i] -edges {1 3 5} [get_pins [get_db $mux_inst .name]/clk_ds_phases_o\[0\] ]
     # 90* clock
     create_generated_clock -name "gen_clk_d$d\_i$i"  -source [get_pins [get_db $mux_inst .name]/clk_i] -edges {2 4 6} [get_pins [get_db $mux_inst .name]/clk_ds_phases_o\[1\] ]
-    # Disable reset timing TODO: why doesn't this work?
-    # set_disable_timing -from reset_i -to * $mux_inst
     incr i
   }
 }

@@ -4,7 +4,7 @@ module mp_serializer_top (
   input reset_i,
   input[255:0] data_i,
   output clk_o,
-  output data_o,
+  output data_o
   );
     
   // Similar to OpenSERDES serializer, register inputs.
