@@ -3,7 +3,10 @@
 
 # Constraints for serial clock (Remember this is DDR so the data is twice as fast!)
 set_units -time ns
+
 create_clock [get_ports clk_i]  -name serial_clock  -period 4.0
+# puts "//// CONSTRAINING SERIAL CLOCK PERIOD TO $::env(SER_CLK_PERIOD)ns"
+# create_clock [get_ports clk_i]  -name serial_clock  -period $::env(SER_CLK_PERIOD)
 
 # Give a lot more time for the async reset signal
 set_false_path -from [get_ports reset_i]
