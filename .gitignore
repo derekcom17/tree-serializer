@@ -1,6 +1,7 @@
 build/
 runs/
 DVEfiles/
+.vscode/
 output.json
 *.vpd
 *.vcd
