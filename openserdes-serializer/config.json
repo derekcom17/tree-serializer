@@ -1,15 +1,12 @@
 {
-    "DESIGN_NAME": "mp_serializer_top",
-    "VERILOG_INCLUDE_DIRS": "dir::../basejump_stl/bsg_misc",
+    "DESIGN_NAME": "openserdes_serializer",
     "VERILOG_FILES": "dir::v/*.v",
-    "BASE_SDC_FILE": "dir::cfg/openlane_constraints.tcl",
-    "CLOCK_PORT": "clk_i",
+    "BASE_SDC_FILE": "dir::cfg/constraints.tcl",
+    "CLOCK_PORT": "CLK",
     "CLOCK_NET": "ref::$CLOCK_PORT",
     "FP_SIZING": "absolute",
     "DIE_AREA": "0 0 300 300",
-    "SYNTH_NO_FLAT": 1,
-    "SYNTH_FLAT_TOP": 0,
-
+    
     "FP_PDN_VOFFSET": 7,
     "FP_PDN_HOFFSET": 7,
     "FP_PDN_SKIPTRIM": true,
